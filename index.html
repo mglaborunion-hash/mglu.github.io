@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@500;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles/tokens.css">
 <link rel="stylesheet" href="styles/pledgebook.css">
 <link rel="stylesheet" href="styles/icons.css">
@@ -47,26 +47,48 @@
 
   <!-- ===================== HOME · HERO ===================== -->
   <section class="hero" id="home" data-screen-label="홈">
-    <div class="hero__bg" aria-hidden="true"></div>
-    <div class="hero__in">
-      <div class="hero__eyebrow">새마을금고중앙회지부 · 제2대 임원선거</div>
-      <h1 class="hero__title">검증된 3년,<br><span class="hl">더 크게</span> 바꾸겠습니다</h1>
-      <p class="hero__sub">현 집행부가 <b>성과로 증명</b>했습니다.<br>이제 조합원의 일터와 삶을 <b>더 크게</b>.</p>
-      <div class="hero__since"><i class="ic ic-shield-check"></i> Since 2023. 7. 5. · 노동조합 3년, 늘 가까이</div>
+    <div class="hero__media">
+      <img class="hero__castle" src="assets/hero-castle.jpg" alt="새마을금고중앙회지부 노동조합 깃발이 걸린 성벽" loading="eager" style="height: 700px">
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__in">
+        <div class="hero__eyebrow">새마을금고중앙회지부 · 제2대 임원선거</div>
+        <h1 class="hero__title">
+          <span class="l1" style="font-family: &quot;Noto Sans KR&quot;">검증된 3년,</span>
+          <span class="l2" style="font-family: &quot;Noto Sans KR&quot;">더 단단히</span>
+          <span class="l3" style="font-family: &quot;Noto Sans KR&quot;">지키겠습니다.</span>
+        </h1>
+        <div class="hero__rule"></div>
+        <p class="hero__sub">우리가 어렵게 만든 성과,<br>조합원의 일터와 삶을<br><b>끝까지 지켜내겠습니다!</b></p>
+      </div>
       <div class="hero__trio">
         <span class="hero__trioground" aria-hidden="true"></span>
         <figure class="p-side p-left">
-          <figcaption><span class="htag"><b>강민규</b><span>수석부위원장 후보</span></span></figcaption>
           <img src="assets/cand-kang.png" alt="수석부위원장 후보 강민규" loading="eager">
         </figure>
         <figure class="p-lead">
-          <figcaption><span class="htag"><b>김삼중</b><span>위원장 후보</span></span></figcaption>
           <img src="assets/cand-kim.png" alt="위원장 후보 김삼중" loading="eager">
         </figure>
         <figure class="p-side p-right">
-          <figcaption><span class="htag"><b>오동희</b><span>사무국장 후보</span></span></figcaption>
           <img src="assets/cand-oh.png" alt="사무국장 후보 오동희" loading="eager">
         </figure>
+      </div>
+    </div>
+
+    <div class="hero__badges">
+      <div class="hbadge">
+        <span class="hbadge__role">수석부위원장 후보</span>
+        <span class="hbadge__name">강민규</span>
+        <span class="hbadge__tag">조합원의 실리를 챙기는<br><b>치밀한 전략가</b></span>
+      </div>
+      <div class="hbadge">
+        <span class="hbadge__role">위원장 후보</span>
+        <span class="hbadge__name">김삼중</span>
+        <span class="hbadge__tag">외풍을 막아낼 든든한 방어막,<br><b>교섭과 투쟁의 선봉장</b></span>
+      </div>
+      <div class="hbadge">
+        <span class="hbadge__role">사무국장 후보</span>
+        <span class="hbadge__name">오동희</span>
+        <span class="hbadge__tag">현장과 노동조합을 연결하는<br><b>소통의 중심</b></span>
       </div>
     </div>
   </section>
@@ -107,9 +129,9 @@
       <button class="navcard" data-goto="pledges">
         <span class="navcard__no">04</span>
         <span class="navcard__ic"><i class="ic ic-shield-check"></i></span>
-        <span class="navcard__title">보호</span>
-        <span class="navcard__sub">더 큰 변화가 아니라 더 강한 보호</span>
-        <span class="navcard__desc">다가올 위기 속, 조합원을 지키기 위한 준비</span>
+        <span class="navcard__title">책임</span>
+        <span class="navcard__sub">끝까지 책임지겠습니다</span>
+        <span class="navcard__desc">다가올 위기 속, 조합원을 지키기 위한 제2기 핵심 공약</span>
         <span class="navcard__slot"><img src="assets/card-protect.png" alt="집행부 3인이 조합원을 보호하는 이미지" loading="lazy"></span>
         <span class="navcard__go">자세히 보기 <i class="ic ic-caret-right"></i></span>
       </button>
@@ -117,8 +139,28 @@
 
     <div class="hub__stats" id="hub-stats"></div>
 
+    <div class="hublinks">
+      <div class="hublinks__head"><i class="ic ic-book-open-text"></i>자료실 · 노동조합 활동 기록</div>
+      <a class="hublink" href="assets/docs/union-3years.pdf" target="_blank" rel="noopener" data-link="pdf-3year">
+        <span class="hublink__ic"><i class="ic ic-chart-line-up"></i></span>
+        <span class="hublink__tx"><b>「노동조합 3년, 이렇게 바뀌었습니다」</b><span>성과 자료 PDF</span></span>
+        <i class="ic ic-arrow-up-right hublink__go"></i>
+      </a>
+      <a class="hublink" href="assets/docs/member-lifecycle.pdf" target="_blank" rel="noopener" data-link="pdf-lifecycle">
+        <span class="hublink__ic"><i class="ic ic-users-three"></i></span>
+        <span class="hublink__tx"><b>「조합원 1인의 생애주기에 따른 변화」</b><span>생애주기 복지 자료 PDF</span></span>
+        <i class="ic ic-arrow-up-right hublink__go"></i>
+      </a>
+      <a class="hublink" href="https://drive.google.com/drive/folders/1-hLz57IZy63vz41hEnz3218zx8fWOAgb" target="_blank" rel="noopener" data-link="board">
+        <span class="hublink__ic"><i class="ic ic-chats-circle"></i></span>
+        <span class="hublink__tx"><b>새마을금고중앙회지부 게시판</b><span>공지·소식 바로가기</span></span>
+        <i class="ic ic-arrow-up-right hublink__go"></i>
+      </a>
+      <p class="hublinks__note">※ 게시판 링크는 구글드라이브 자료실로 연결됩니다.</p>
+    </div>
+
     <div class="hubclose">
-      <h2>검증된 보호,<br><span class="gold">더 큰 변화</span></h2>
+      <h2 style="font-family: &quot;Noto Sans KR&quot;">검증된 책임,<br><span class="gold">더 단단한 약속</span></h2>
       <p>위기와 변화의 시기, 필요한 것은 새로운 실험이 아니라 검증된 힘입니다.</p>
     </div>
   </section>
@@ -178,7 +220,7 @@
     <div class="sec__head">
       <span class="kicker"><i class="ic ic-arrow-bend-up-right"></i>계승 · 그 열정을 이어서</span>
       <h2 class="sec__title">함께했던 동지가,<br>이제 <span class="red">새로운 책임</span>으로</h2>
-      <p class="sec__lead">제1기의 헌신을 가장 가까이서 지켜본 사람이, 그 열정을 이어받습니다.</p>
+      <p class="sec__lead">제1대 조합이 함께 걸어온 3년, 그리고 오동희 후보에 대한 이야기입니다.</p>
     </div>
 
     <div class="succ__lead">
@@ -192,40 +234,42 @@
 
     <div class="letter">
       <span class="letter__quote"><i class="ic ic-quotes"></i></span>
-      <div class="letter__from">전임 사무국장이 보내는 편지</div>
+      <div class="letter__from">제1대 조합이 바라본 오동희 후보</div>
       <div class="letter__body" id="letter-body">
-        <p>지난 3년, 맨손으로 다시 세운 노동조합의 모든 순간을 가장 가까이에서 함께한 동지가 있었습니다.</p>
-        <p>이제 그 열정과 책임을 믿고 맡깁니다. 조합원 곁에서 끝까지 함께해 줄 사람이라 확신합니다.</p>
+        <p>조합원 여러분 안녕하십니까. 초대 노동조합이 조합원 여러분과 함께한 시간이 어느덧 3년이 되었습니다.</p>
+        <p>23년 대내외적으로 혼란스러웠던 시기에 중앙회에서 우리 스스로를 지키기 위해 노동조합을 만든 것 자체가 큰 의미가 있는 일이지만, 조합이 힘을 키우고 발전하려면 사용자측과의 정보비대칭을 완화해야 하고 조합이 <b>데이터와 논리로 사측과 대응하는 체력</b>을 길러야 했습니다.</p>
+        <p>지난 3년은 도전의 연속이었습니다. 조합 운영을 위한 각종 규정 제정, 분회 및 대의원 구성, 조합비 현실화, 단체협약 초안 작성, 수십 차례의 단체협약 소실무교섭과 본교섭, 최초 임금교섭안 작성 및 기획, 창립 2주년 기념행사 개최, 각종 노사협의회 대응, 그리고 마침내 <b>단체협약 체결</b>까지. 어느 하나 쉬운 일은 없었습니다.</p>
+        <p>초대 집행부는 머리를 맞대고 내부적으로 치열한 토론과 방향설정을 통해 노동조합 재건의 길을 걸어왔고, 이 길은 운영위원, 대의원 그리고 조합원 여러분의 힘이 있었기에 가능했습니다.</p>
+        <p>또한 단체교섭 소식, 임금교섭 소식, 카드뉴스, 각종 안내문과 최근 「노동조합 3년, 이렇게 변화했습니다」, 「조합원 1인의 생애주기에 따른 변화」 자료까지 조합에서 발송한 대부분의 안내자료에는 가장 중요한 기준이 있습니다. 바로 <b>‘조합원의 눈높이’</b>입니다.</p>
+        <p>복잡한 내용을 쉽게 설명하고, 데이터를 근거로 제시하며, 조합원 여러분이 궁금해하는 부분에 답할 수 있는 노동조합을 만들기 위해 노력했습니다. 운영위원 단톡방 및 연락체계를 구축하여 중요사항 및 이슈사항들을 항상 운영위원 및 전조합원에게 알려왔으며, 운영위원을 통한 대의적 의견 수렴절차를 항상 거쳤으며 그 결과로 도출된 의사결정들은 집행부만의 조합이 아닌 <b>모두를 위한 노동조합</b>의 정당성을 더해주었습니다.</p>
+        <p>그 결과 지금 노동조합은 사측이 전수 데이터를 제공하지 않더라도 상당한 수준의 분석과 정책 검토가 가능한 역량을 갖추게 되었습니다. 이는 앞으로도 노동조합의 중요한 자산이 될 것입니다.</p>
+        <p>3년 동안 노동조합의 기반을 만드는 데 많은 역량을 쏟아부었습니다. 다만 돌이켜보면 조합원 고충상담과 의견수렴 등 현장과 직접 소통하는 활동은 스스로 목표를 설정했던 것만큼 충분히 하지 못했던 아쉬움도 있습니다. 그래서 앞으로의 노동조합에는 <b>현장과 조합을 더욱 가깝게 연결할 수 있는 사람</b>이 필요하다고 생각합니다.</p>
+        <p>초대 조합이 가까이에서 지켜본 <b>오동희 사무국장 후보</b>는 바로 그런 사람입니다. 현업으로 바쁜 와중에도 결코 쉽지 않은 노동조합 활동에 스스로 참여하며 대외협력본부장으로서 많은 역할을 해왔습니다. 조합원의 목소리를 듣기 위해 노력하는 모습, 맡은 일을 책임 있게 추진하는 모습, 그리고 노동조합의 미래에 대해 고민하는 모습을 보며 언젠가는 더 큰 역할을 맡을 준비가 되어 있는 사람이라고 생각했습니다.</p>
+        <p>노동조합은 특정 개인이 만드는 조직이 아닙니다. <b>35년 만에 다시 세운 노동조합의 정신과 경험은 계속 이어져야 합니다.</b> 지난 3년 동안 함께 만들어온 노동조합의 경험과 성과를 이어가는 일에 있어 오동희 후보가 충분히 그 역할을 해낼 수 있다고 믿습니다.</p>
+        <p>초대 조합은 오동희 후보가 현장과 조합을 더욱 가깝게 연결하고, 조합원들의 목소리를 더욱 세심하게 담아낼 것이라고 확신합니다.</p>
+        <p>조합원 여러분의 <b>올바른 선택</b>을 부탁드립니다.</p>
       </div>
-      <div class="letter__sign">초대 사무국장 <b>고강일</b> 드림</div>
+      <div class="letter__sign">제1대 조합 드림</div>
     </div>
-
-    <div class="draft-note"><i class="ic ic-envelope-simple"></i>전임 사무국장의 편지 내용은 추후 실제 원문으로 업데이트 예정입니다.</div>
   </section>
 
-  <!-- ===================== 보호 — 더 큰 변화를 위해 (제2기 핵심 공약) ===================== -->
-  <section class="sec sec--navy" id="pledges" data-screen-label="보호">
+  <!-- ===================== 책임 — 끝까지 책임지겠습니다 (제2기 핵심 공약) ===================== -->
+  <section class="sec sec--navy" id="pledges" data-screen-label="책임">
     <div class="sec__head">
-      <span class="kicker"><i class="ic ic-shield-check"></i>보호 · 더 큰 변화를 위해</span>
-      <h2 class="sec__title">검증된 보호 위에,<br><span class="red">제2기 핵심 공약</span></h2>
-      <p class="sec__lead">카드를 누르면 공약 인포그래픽을 크게 볼 수 있습니다.</p>
+      <span class="kicker"><i class="ic ic-shield-check"></i>책임 · 끝까지 책임지겠습니다</span>
+      <h2 class="sec__title">조합원과의 <span class="red">네 가지 약속</span></h2>
+      <p class="sec__lead">조합원의 삶, 일터, 중앙회의 미래를 끝까지 책임지겠습니다.</p>
     </div>
-
-    <div class="gallery-grid" id="gallery-grid"></div>
-
-    <div class="sec__sub reveal" style="margin-top:2rem">
-      <span class="kicker kicker--plain"><i class="ic ic-book-open-text"></i>공약 자세히 보기</span>
-      <h3 class="sub__title" style="color:#fff">10대 공약 <span style="color:var(--gold-400)">한눈에</span></h3>
-      <p class="sec__lead">제목을 탭하면 세부 내용이 펼쳐집니다.</p>
-    </div>
-    <div class="pledge-list" id="pledge-list"></div>
+    <div class="cat-list" id="cat-list"></div>
   </section>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="foot">
     <div class="foot__org">전국금융산업노동조합<br>새마을금고중앙회지부 · 제2대 임원선거</div>
     <div class="foot__id"><span class="num">1</span><span class="nm">김삼중 · 강민규 · 오동희</span></div>
-    <p class="foot__note">본 페이지는 기호 1번 후보의 선거 홍보물입니다. 공약 세부 운영 기준은 당선 후 노사협의를 통해 확정됩니다.<br>#늘 가까이 있는 #조합원을 위한 #벌써 3년</p>
+    <p class="foot__note">본 페이지는 기호 1번 후보의 선거 홍보물입니다. 
+공약 세부 운영 기준은 당선 후 노사협의를 통해 확정됩니다.
+#늘 가까이 있는 #조합원을 위한 #벌써 3년</p>
   </footer>
 
 </main>
@@ -236,7 +280,7 @@
   <button class="bnav__btn" data-sec="start"><i class="ic ic-flag-banner"></i><span>시작</span></button>
   <button class="bnav__btn" data-sec="record"><i class="ic ic-chart-line-up"></i><span>성과</span></button>
   <button class="bnav__btn" data-sec="succession"><i class="ic ic-arrow-bend-up-right"></i><span>계승</span></button>
-  <button class="bnav__btn" data-sec="pledges"><i class="ic ic-shield-check"></i><span>보호</span></button>
+  <button class="bnav__btn" data-sec="pledges"><i class="ic ic-shield-check"></i><span>책임</span></button>
 </nav>
 
 <!-- ===================== LIGHTBOX ===================== -->
@@ -257,3 +301,6 @@
 <script src="data/content.js"></script>
 </body>
 </html>
+
+<style id="__om-edit-overrides">
+</style>

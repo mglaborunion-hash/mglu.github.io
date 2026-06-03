@@ -1,0 +1,106 @@
+/* =====================================================================
+   기호 1번 공약집 — 세부 페이지 공용 스타일 (책임 파트 하위 페이지)
+   IT센터 세부 페이지와 동일 포맷
+   ===================================================================== */
+.dpage { width: 100%; max-width: var(--col, 600px); margin-inline: auto; background: var(--paper); min-height: 100vh; box-shadow: 0 0 60px rgba(8,24,74,.12); overflow: clip; padding-bottom: 3rem; }
+
+/* top bar */
+.dbar { position: sticky; top: 0; z-index: 40; background: rgba(8,24,74,.96); backdrop-filter: blur(8px); color: var(--on-navy); border-bottom: 1px solid rgba(255,255,255,.08); }
+.dbar__in { max-width: var(--col,600px); margin-inline: auto; height: 52px; display: flex; align-items: center; gap: .7rem; padding-inline: clamp(1rem,5vw,1.4rem); }
+.dbar__back { display: inline-flex; align-items: center; gap: .35rem; font-weight: 800; font-size: var(--t-sm); color: var(--on-navy-soft); background: none; border: none; cursor: pointer; }
+.dbar__back .ic { font-size: 1.2rem; }
+.dbar__back:hover { color: var(--gold-400); }
+.dbar__t { margin-left: auto; display: flex; align-items: center; gap: .5rem; font-weight: 900; font-size: .98rem; }
+.dbar__num { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 7px; background: var(--grad-gold); color: var(--navy-900); font-weight: 900; font-size: 1rem; }
+
+/* hero: optional image + headline */
+.dhero { position: relative; background: var(--grad-navy); color: var(--on-navy); }
+.dhero__img { width: 100%; height: clamp(190px, 50vw, 300px); object-fit: cover; display: block; }
+.dhero--photo .dhero__scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,20,58,.2) 0%, rgba(8,20,58,.1) 35%, rgba(8,24,74,.94) 100%); }
+.dhero__cap { padding: clamp(1.4rem,5vw,2rem) clamp(1.3rem,5vw,1.8rem); position: relative; }
+.dhero--photo .dhero__cap { position: absolute; left: 0; right: 0; bottom: 0; }
+.dhero__badge { display: inline-flex; align-items: center; gap: .45rem; font-weight: 800; font-size: var(--t-xs); color: var(--navy-900); background: var(--grad-gold); padding: .35rem .8rem; border-radius: var(--r-pill); margin-bottom: .8rem; }
+.dhero__badge .ic { font-size: 1.05em; }
+.dhero__title { font-weight: 900; font-size: clamp(1.5rem,6.4vw,2.1rem); line-height: 1.25; letter-spacing: -.02em; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.5); }
+.dhero__title .gold { color: var(--gold-400); }
+.dhero__sub { margin-top: .7rem; font-size: var(--t-body); color: #dbe4fb; font-weight: 600; line-height: 1.6; text-shadow: 0 1px 6px rgba(0,0,0,.4); }
+
+/* section wrap */
+.dsec { padding: clamp(1.8rem,6vw,2.6rem) clamp(1.3rem,5vw,1.8rem) 0; }
+.dsec__kicker { display: inline-flex; align-items: center; gap: .45rem; font-weight: 800; font-size: var(--t-xs); color: var(--blue-600); background: var(--blue-100); padding: .38rem .8rem; border-radius: var(--r-pill); margin-bottom: .9rem; }
+.dsec__kicker .ic { font-size: 1.05em; }
+.dsec__title { font-weight: 900; font-size: clamp(1.35rem,5.2vw,1.7rem); letter-spacing: -.02em; line-height: 1.3; color: var(--ink); }
+.dsec__title .red { color: var(--red-500); }
+
+/* numbered detail cards */
+.dlist { display: grid; gap: .9rem; margin-top: 1.3rem; }
+.dcard { background: var(--white); border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--sh-card); padding: 1.3rem 1.2rem; }
+.dcard__head { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: .8rem; margin-bottom: .7rem; }
+.dcard__no { font-weight: 900; font-size: clamp(1.7rem,6vw,2.1rem); color: var(--navy-700); line-height: 1; }
+.dcard__title { font-weight: 900; font-size: clamp(1.1rem,4.4vw,1.32rem); color: var(--ink); letter-spacing: -.01em; line-height: 1.3; word-break: keep-all; }
+.dcard__lead { font-size: var(--t-sm); color: var(--ink-soft); line-height: 1.6; margin: 0 0 .9rem; word-break: keep-all; }
+.dcard__lead b { color: var(--blue-600); font-weight: 700; }
+
+.dchecks { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
+.dchecks li { display: grid; grid-template-columns: auto 1fr; gap: .6rem; align-items: start; font-size: var(--t-sm); color: var(--ink); line-height: 1.5; word-break: keep-all; }
+.dchecks .ic { color: var(--blue-600); font-size: 1.15rem; margin-top: .05rem; }
+
+/* sub-group within a card (대응 대상 / 대응 방안 등) */
+.dgroup { margin-top: 1rem; }
+.dgroup__t { font-weight: 800; font-size: var(--t-xs); color: var(--blue-600); margin-bottom: .5rem; }
+
+/* callout (수치/비교 박스) */
+.dcallout { margin-top: 1rem; background: var(--blue-50); border: 1px solid var(--blue-100); border-radius: var(--r-md); padding: .9rem 1rem; }
+.dcallout .row { font-size: var(--t-sm); color: var(--ink-soft); line-height: 1.7; }
+.dcallout .row b { color: var(--blue-600); font-weight: 800; }
+.dcallout .metric { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; font-weight: 900; }
+.dcallout .metric .from { color: var(--ink-mute); }
+.dcallout .metric .arrow { color: var(--red-500); }
+.dcallout .metric .to { color: var(--blue-600); font-size: 1.25em; }
+.dcallout .note { margin-top: .5rem; font-size: var(--t-xs); color: var(--ink-mute); line-height: 1.6; }
+
+/* stage sub-blocks (근속 단계별) */
+.dstage { margin-top: .9rem; border-left: 3px solid var(--blue-400); padding: .2rem 0 .2rem .9rem; }
+.dstage__t { font-weight: 800; font-size: var(--t-sm); color: var(--navy-700); margin-bottom: .35rem; }
+.dstage__t b { color: var(--red-500); }
+.dstage p { font-size: var(--t-xs); color: var(--ink-soft); line-height: 1.6; margin: 0; }
+
+/* activity photo cards (중앙회 미래) */
+.dacts { display: grid; gap: .8rem; margin-top: 1.3rem; }
+.dact { background: var(--white); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--sh-card); }
+.dact img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; background: var(--blue-50); }
+.dact__b { padding: .9rem 1rem 1rem; }
+.dact__t { font-weight: 800; font-size: var(--t-body); color: var(--ink); margin-bottom: .25rem; }
+.dact__c { font-size: var(--t-xs); color: var(--ink-soft); line-height: 1.55; word-break: keep-all; }
+
+/* 4-up icon grid (대응과제) */
+.dtasks { display: grid; grid-template-columns: repeat(2,1fr); gap: .7rem; margin-top: 1.3rem; }
+.dtask { background: var(--white); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--sh-card); padding: 1.1rem 1rem; text-align: center; }
+.dtask__ic { display: grid; place-items: center; width: 46px; height: 46px; margin: 0 auto .6rem; border-radius: 13px; background: var(--grad-navy); color: var(--gold-400); }
+.dtask__ic .ic { font-size: 1.5rem; }
+.dtask__t { font-weight: 800; font-size: var(--t-sm); color: var(--ink); line-height: 1.35; margin-bottom: .35rem; word-break: keep-all; }
+.dtask__c { font-size: var(--t-xs); color: var(--ink-soft); line-height: 1.5; word-break: keep-all; }
+
+/* solidarity / key-promise footer */
+.dpromise { margin: 2rem clamp(1.3rem,5vw,1.8rem) 0; background: var(--grad-navy); color: var(--on-navy); border-radius: var(--r-xl); padding: 1.5rem 1.3rem; }
+.dpromise__t { text-align: center; font-weight: 800; font-size: var(--t-body); color: var(--gold-400); margin-bottom: 1rem; }
+.dpromise__list { display: grid; gap: .55rem; }
+.dpromise__list li { display: grid; grid-template-columns: auto 1fr; gap: .6rem; align-items: start; font-size: var(--t-sm); color: #fff; font-weight: 600; line-height: 1.5; word-break: keep-all; }
+.dpromise__list .ic { color: var(--gold-400); font-size: 1.2rem; margin-top: .05rem; }
+
+.dclose { text-align: center; margin: 2rem clamp(1.3rem,5vw,1.8rem) 0; }
+.dclose p { font-weight: 800; font-size: clamp(1.05rem,4.2vw,1.3rem); color: var(--ink); line-height: 1.5; word-break: keep-all; }
+.dclose p .blue { color: var(--blue-600); }
+.dclose p .red { color: var(--red-500); }
+
+.dback { display: flex; justify-content: center; margin-top: 1.6rem; }
+.dback a { display: inline-flex; align-items: center; gap: .45rem; font-weight: 800; font-size: var(--t-sm); color: var(--blue-600); background: var(--white); border: 1.5px solid var(--blue-400); border-radius: var(--r-pill); padding: .7rem 1.4rem; text-decoration: none; }
+.dback a:hover { background: var(--blue-600); color: #fff; }
+.dback .ic { font-size: 1.1rem; }
+
+/* 반응형 하드닝 */
+.dcard, .dtask, .dact, .dcard__title, .dchecks li, .dtask__t, .dtask__c, .dpromise__list li { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 360px) {
+  .dtasks { grid-template-columns: 1fr; }
+  .dcard__head { gap: .6rem; }
+}

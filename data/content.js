@@ -5,7 +5,7 @@
 
 /* ---- 숫자로 증명한 지난 3년 ---- */
 const STATS = [
-  { icon:'users-three',   num:932, dec:0, unit:'명',     lab:'함께한 조합원' },
+  { icon:'users-three',   num:933, dec:0, unit:'명',     lab:'함께한 조합원' },
   { icon:'handshake',     num:52,  dec:0, unit:'년만의',  lab:'중앙회 최초 단체협약' },
   { icon:'chart-line-up', num:4.0, dec:1, unit:'%',      lab:"2년 연속 임금인상('25 3.9%)" },
   { icon:'shield-check',  num:92,  dec:0, unit:'%',      lab:'전략적업적평가 개정 반대' },
@@ -70,6 +70,57 @@ const GALLERY = [
   { no:'07', src:asset('pledge7','assets/infographics/pledge-7.jpg'), title:'공정·투명 인사 원칙 확립' },
   { no:'08', src:asset('pledge8','assets/infographics/pledge-8.jpg'), title:'시간외·주말 근무제도 합리화' },
   { no:'09', src:asset('pledge9','assets/infographics/pledge-9.jpg'), title:'비효율적 규정시험 폐지' },
+];
+
+/* ---- 책임 파트: 4개 하위 카테고리 ---- */
+/* images: GALLERY 인덱스(0-based) — [자세히 보기]가 해당 인포그래픽을 라이트박스로 염 */
+const CATEGORIES = [
+  { no:'①', title:'중앙회의 미래를 지키겠습니다',
+    lead:'변화의 파고 속에서도 흔들리지 않겠습니다.',
+    points:[
+      '경영환경 변화에 따른 조합원 보호',
+      '감독체계 변화 대응',
+      '공적자금 투입 등 주요 현안 대응',
+      '지방 이전 등 조직 변화 대응',
+      '조합원 고용안정 확보',
+    ],
+    note:'기호 1번은 금융노조 41개 지부, 한국노총, 협동조합 노동조합 협의회 등과의 굳건한 연대를 바탕으로 조합원의 권익과 중앙회의 미래를 지켜나가겠습니다.',
+    images:[0], more:'자세히 보기', href:'future.html' },
+
+  { no:'②', title:'조합원의 삶을 지키겠습니다',
+    lead:'더 나은 보상과 더 나은 복지',
+    points:[
+      '3년간 총임금 최소 10% 인상',
+      '업적달성장려금 지급률 상향',
+      '금요일 1시간 조기퇴근제 시행',
+      '주 4.5일제 산별합의 즉시 적용',
+      '근속 단계별 휴가·지원금 제도 도입',
+    ],
+    images:[2,3,4,5], more:'자세히 보기', href:'life.html' },
+
+  { no:'③', title:'공정한 인사와 건강한 조직문화를 만들겠습니다',
+    points:[
+      '부당행위 대응체계 확립',
+      '공정·투명 인사 원칙 확립',
+      '시간외·주말근무 제도 합리화',
+      '규정시험 폐지',
+    ],
+    images:[1,6,7,8], more:'자세히 보기', href:'fair.html' },
+
+  { no:'④', title:'IT센터 조합원과의 약속',
+    lead:'현장의 목소리를 공약에 담았습니다.',
+    points:[
+      '계정계 차세대 등 프로젝트 관련 현장 의견 반영',
+      '프로젝트 수당 신설',
+      '프로젝트 참여 시 업무부담 완화',
+      'IT 맞춤형 교육 확대',
+      '생성형 AI 개인계정 구독 지원',
+      '모션데스크 및 주변기기 지원',
+      '내근직 복장 완전 자율화',
+      '야간 식대·택시비 지원',
+      '시차출퇴근제 개선',
+    ],
+    it:true, images:[], more:'IT센터 세부 공약 보기', href:'it-center.html' },
 ];
 
 /* ---- 핵심 공약 9 (제목 그리드 → 탭하면 상세) ---- */
@@ -209,41 +260,18 @@ function renderAchievements() {
       <div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
 }
 
-function renderGallery() {
-  const w = document.getElementById('gallery-grid'); if (!w) return;
-  w.innerHTML = GALLERY.map((g,i) => `
-    <button class="gcard" data-idx="${i}" aria-label="${g.title} 크게 보기">
-      <span class="gcard__no">${g.no}</span>
-      <img src="${g.src}" alt="${g.title}" loading="lazy">
-      <span class="gcard__zoom"><i class="ic ic-magnifying-glass-plus"></i></span>
-      <span class="gcard__cap">${g.title}</span>
-    </button>`).join('');
-}
-
-function renderPledges() {
-  const w = document.getElementById('pledge-list'); if (!w) return;
-  w.innerHTML = PLEDGES.map((p,i) => `
-    <article class="pledge${p.flag ? ' pledge--flag' : ''}" data-idx="${i}">
-      <button class="pledge__head" aria-expanded="false">
-        <span class="pledge__no">${p.no}</span>
-        <span class="pledge__icbox"><i class="ic ic-${p.icon}"></i></span>
-        <span class="pledge__head-tx">
-          <span class="pledge__cat">${p.cat}${p.flag ? ' · <b>대표공약</b>' : ''}</span>
-          <span class="pledge__title">${p.title}</span>
-        </span>
-        <i class="ic ic-caret-right pledge__chev"></i>
-      </button>
-      <div class="pledge__panel">
-        <div class="pledge__panel-in">
-          <p class="pledge__sub">${p.sub}</p>
-          <div class="pledge__points">
-            ${p.points.map(pt => `
-              <div class="point"><span class="point__ic"><i class="ic ic-${pt.ic}"></i></span>
-                <span class="point__tx"><b>${pt.b}</b><span>${pt.s}</span></span></div>`).join('')}
-          </div>
-          <div class="pledge__foot"><i class="ic ic-${p.foot.ic}"></i><span>${p.foot.t}</span></div>
-        </div>
-      </div>
+function renderCategories() {
+  const w = document.getElementById('cat-list'); if (!w) return;
+  w.innerHTML = CATEGORIES.map((c) => `
+    <article class="cat${c.it ? ' cat--it' : ''}">
+      <header class="cat__head"><span class="cat__no">${c.no}</span><h3 class="cat__title">${c.title}</h3></header>
+      ${c.lead ? `<p class="cat__lead">${c.lead}</p>` : ''}
+      <ul class="cat__points">
+        ${c.points.map(p => `<li><i class="ic ic-check-circle"></i><span>${p}</span></li>`).join('')}
+      </ul>
+      ${c.note ? `<p class="cat__note">${c.note}</p>` : ''}
+      <button class="cat__more" data-images="${(c.images || []).join(',')}"${c.href ? ` data-href="${c.href}"` : ''}${c.draft ? ' data-draft="1"' : ''}>${c.more} <i class="ic ic-arrow-up-right"></i></button>
+      ${c.draft ? `<p class="cat__draft" hidden>${c.draft}</p>` : ''}
     </article>`).join('');
 }
 
@@ -319,9 +347,11 @@ function initPledges() {
 /* ===================================================================== */
 /* Lightbox                                                              */
 /* ===================================================================== */
-let lbIdx = 0;
-function lbOpen(i) {
-  lbIdx = i;
+let lbList = GALLERY.map((_, i) => i);
+let lbPos = 0;
+function lbOpen(list, start) {
+  lbList = (list && list.length) ? list : GALLERY.map((_, i) => i);
+  lbPos = start || 0;
   const lb = document.getElementById('lightbox');
   lb.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -331,17 +361,27 @@ function lbClose() {
   document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
 }
-function lbGo(d) { lbIdx = (lbIdx + d + GALLERY.length) % GALLERY.length; lbRender(); }
+function lbGo(d) { lbPos = (lbPos + d + lbList.length) % lbList.length; lbRender(); }
 function lbRender() {
-  const g = GALLERY[lbIdx];
+  const g = GALLERY[lbList[lbPos]];
   document.getElementById('lb-img').src = g.src;
   document.getElementById('lb-cap').textContent = g.no + ' · ' + g.title;
-  document.getElementById('lb-cur').textContent = lbIdx + 1;
+  document.getElementById('lb-cur').textContent = lbPos + 1;
+  document.getElementById('lb-total').textContent = lbList.length;
 }
 function initLightbox() {
-  const grid = document.getElementById('gallery-grid');
-  if (grid) grid.addEventListener('click', e => {
-    const c = e.target.closest('.gcard'); if (c) lbOpen(parseInt(c.dataset.idx, 10));
+  // 카테고리 [자세히 보기] → 해당 인포그래픽 라이트박스 / IT는 준비중 노트 토글
+  document.querySelectorAll('.cat__more').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.href) { window.location.href = btn.dataset.href; return; }
+      const raw = btn.dataset.images || '';
+      const idxs = raw.split(',').filter(s => s !== '').map(Number);
+      if (idxs.length) { lbOpen(idxs, 0); }
+      else if (btn.dataset.draft) {
+        const n = btn.parentElement.querySelector('.cat__draft');
+        if (n) n.hidden = !n.hidden;
+      }
+    });
   });
   const lb = document.getElementById('lightbox');
   if (!lb) return;
@@ -349,7 +389,6 @@ function initLightbox() {
   lb.querySelector('.lb__prev').addEventListener('click', () => lbGo(-1));
   lb.querySelector('.lb__next').addEventListener('click', () => lbGo(1));
   lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('lb__stage')) lbClose(); });
-  document.getElementById('lb-total').textContent = GALLERY.length;
   document.addEventListener('keydown', e => {
     if (!lb.classList.contains('open')) return;
     if (e.key === 'Escape') lbClose();
@@ -407,12 +446,10 @@ document.addEventListener('DOMContentLoaded', () => {
   renderHubStats();
   renderHighlights();
   renderAchievements();
-  renderGallery();
-  renderPledges();
+  renderCategories();
   injectIcons();
   initCounts();
   initToggle();
-  initPledges();
   initLightbox();
   initNav();
   initReveal();

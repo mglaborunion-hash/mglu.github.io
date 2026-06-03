@@ -5,6 +5,9 @@ screenshots/
 # image-slot 영속화 사이드카 (런타임 전용)
 .image-slots.state.json
 
+# 로컬 에이전트/에디터 설정
+.claude/
+
 # OS / 에디터
 .DS_Store
 Thumbs.db

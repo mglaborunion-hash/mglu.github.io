@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>IT센터 조합원과의 약속 · 기호 1번 공약집</title>
+<meta name="description" content="2026년 4월 8일 IT센터 현장 방문 — 우리가 약속하는 6가지 변화. 기호 1번 김삼중·강민규·오동희.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/pledgebook.css">
+<link rel="stylesheet" href="styles/icons.css">
+<style>
+/* ---- IT 세부 페이지 전용 ---- */
+.itpage { width: 100%; max-width: var(--col, 600px); margin-inline: auto; background: var(--paper); min-height: 100vh; box-shadow: 0 0 60px rgba(8,24,74,.12); overflow: clip; padding-bottom: 3rem; }
+.itbar { position: sticky; top: 0; z-index: 40; background: rgba(8,24,74,.96); backdrop-filter: blur(8px); color: var(--on-navy); border-bottom: 1px solid rgba(255,255,255,.08); }
+.itbar__in { max-width: var(--col,600px); margin-inline: auto; height: 52px; display: flex; align-items: center; gap: .7rem; padding-inline: clamp(1rem,5vw,1.4rem); }
+.itbar__back { display: inline-flex; align-items: center; gap: .35rem; font-weight: 800; font-size: var(--t-sm); color: var(--on-navy-soft); background: none; border: none; cursor: pointer; }
+.itbar__back .ic { font-size: 1.2rem; }
+.itbar__back:hover { color: var(--gold-400); }
+.itbar__t { margin-left: auto; display: flex; align-items: center; gap: .5rem; font-weight: 900; font-size: .98rem; }
+.itbar__num { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 7px; background: var(--grad-gold); color: var(--navy-900); font-weight: 900; font-size: 1rem; }
+
+/* hero image + visit statement */
+.itvisit { position: relative; }
+.itvisit__img { width: 100%; height: clamp(220px, 56vw, 340px); object-fit: cover; display: block; }
+.itvisit__scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,20,58,.25) 0%, rgba(8,20,58,.15) 40%, rgba(8,24,74,.92) 100%); }
+.itvisit__cap { position: absolute; left: 0; right: 0; bottom: 0; padding: clamp(1.3rem,5vw,2rem) clamp(1.3rem,5vw,1.8rem); color: #fff; }
+.itvisit__badge { display: inline-flex; align-items: center; gap: .45rem; font-weight: 800; font-size: var(--t-xs); color: var(--navy-900); background: var(--grad-gold); padding: .35rem .8rem; border-radius: var(--r-pill); margin-bottom: .8rem; }
+.itvisit__badge .ic { font-size: 1.05em; }
+.itvisit__lead { font-weight: 800; font-size: clamp(1.15rem,4.6vw,1.55rem); line-height: 1.45; letter-spacing: -.01em; text-shadow: 0 2px 10px rgba(0,0,0,.5); }
+.itvisit__lead b { color: var(--gold-400); }
+.itvisit__sub { margin-top: .6rem; font-size: var(--t-body); color: #dbe4fb; font-weight: 600; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
+
+/* section */
+.itsec { padding: clamp(2rem,7vw,3rem) clamp(1.3rem,5vw,1.8rem) 0; }
+.itsec__kicker { display: inline-flex; align-items: center; gap: .45rem; font-weight: 800; font-size: var(--t-xs); color: var(--blue-600); background: var(--blue-100); padding: .38rem .8rem; border-radius: var(--r-pill); margin-bottom: .9rem; }
+.itsec__title { font-weight: 900; font-size: clamp(1.5rem,6vw,2rem); letter-spacing: -.02em; line-height: 1.25; color: var(--ink); }
+.itsec__title .red { color: var(--red-500); }
+
+.itmeeting { margin: 1.3rem 0 .4rem; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--sh-card); border: 1px solid var(--line); }
+.itmeeting img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; }
+.itmeeting__cap { font-size: var(--t-xs); color: var(--ink-mute); text-align: center; padding: .6rem .8rem; background: var(--white); }
+
+/* 6 changes — single text frame, no icons */
+.itlist { margin-top: 1.4rem; background: var(--white); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--sh-card); overflow: hidden; }
+.itlist__row { display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: .8rem; margin: 0; padding: 1rem 1.2rem; font-weight: 800; font-size: clamp(1rem,4vw,1.18rem); color: var(--ink); letter-spacing: -.01em; line-height: 1.4; word-break: keep-all; }
+.itlist__row + .itlist__row { border-top: 1px solid var(--line-soft); }
+.itlist__no { font-weight: 900; font-size: 1.25em; color: var(--gold-600); line-height: 1; }
+
+.itfoot { margin-top: 2.2rem; padding: 1.6rem clamp(1.3rem,5vw,1.8rem); background: var(--grad-navy); color: var(--on-navy); text-align: center; border-radius: var(--r-xl); margin-inline: clamp(1.3rem,5vw,1.8rem); }
+.itfoot .ic { font-size: 2.4rem; color: var(--gold-400); }
+.itfoot p { margin-top: .7rem; font-weight: 800; font-size: var(--t-body); color: #fff; }
+.itfoot span { display: block; margin-top: .5rem; font-size: var(--t-sm); color: var(--on-navy-soft); font-weight: 600; }
+.itback { display: flex; justify-content: center; margin-top: 1.6rem; }
+.itback a { display: inline-flex; align-items: center; gap: .45rem; font-weight: 800; font-size: var(--t-sm); color: var(--blue-600); background: var(--white); border: 1.5px solid var(--blue-400); border-radius: var(--r-pill); padding: .7rem 1.4rem; text-decoration: none; }
+.itback a:hover { background: var(--blue-600); color: #fff; }
+.itback .ic { font-size: 1.1rem; }
+</style>
+</head>
+<body>
+
+<header class="itbar">
+  <div class="itbar__in">
+    <button class="itbar__back" onclick="history.length>1?history.back():location.href='index.html'"><i class="ic ic-caret-left"></i>돌아가기</button>
+    <span class="itbar__t"><span class="itbar__num">④</span>IT센터</span>
+  </div>
+</header>
+
+<main class="itpage">
+
+  <!-- 상단: 방문 이미지 + 선언 -->
+  <section class="itvisit">
+    <img class="itvisit__img" src="assets/it-center.jpg" alt="새마을금고 IT센터 전경">
+    <div class="itvisit__scrim"></div>
+    <div class="itvisit__cap">
+      <span class="itvisit__badge"><i class="ic ic-buildings"></i>IT센터 현장 방문</span>
+      <p class="itvisit__lead">2026년 4월 8일, IT센터를 직접 방문하여 <b>조합원 여러분의 목소리</b>를 들었습니다.</p>
+      <p class="itvisit__sub">그 약속, 반드시 실천하겠습니다.</p>
+    </div>
+  </section>
+
+  <!-- 중단: 간담회 이미지 + 6가지 변화 -->
+  <section class="itsec">
+    <span class="itsec__kicker"><i class="ic ic-chats-circle"></i>현장의 목소리</span>
+    <h2 class="itsec__title">우리가 약속하는<br><span class="red">6가지 변화</span></h2>
+
+    <figure class="itmeeting">
+      <img src="assets/it-meeting.jpg" alt="IT센터 조합원 간담회 현장">
+      <figcaption class="itmeeting__cap">2026. 4. 8. IT센터 조합원 간담회 현장</figcaption>
+    </figure>
+
+    <div class="itlist">
+      <p class="itlist__row"><span class="itlist__no">①</span>차세대 프로젝트, 사람이 먼저입니다</p>
+      <p class="itlist__row"><span class="itlist__no">②</span>더 나은 IT 근무환경</p>
+      <p class="itlist__row"><span class="itlist__no">③</span>AI와 함께 성장하는 IT센터</p>
+      <p class="itlist__row"><span class="itlist__no">④</span>유연하고 합리적인 근무제도</p>
+      <p class="itlist__row"><span class="itlist__no">⑤</span>야간근무 지원 강화</p>
+      <p class="itlist__row"><span class="itlist__no">⑥</span>언제 어디서나 소통하는 노동조합</p>
+    </div>
+
+    <div class="itfoot">
+      <p>IT센터 조합원의 일터, 끝까지 책임지겠습니다.</p>
+      <span>기호 1번 김삼중 · 강민규 · 오동희</span>
+    </div>
+
+    <div class="itback">
+      <a href="index.html#pledges"><i class="ic ic-caret-left"></i>공약집으로 돌아가기</a>
+    </div>
+  </section>
+
+</main>
+
+<script src="data/icons.js"></script>
+<script>
+(function () {
+  var map = window.ICONS || {};
+  document.querySelectorAll('i.ic').forEach(function (el) {
+    var cls = [].slice.call(el.classList).find(function (c) { return c.indexOf('ic-') === 0; });
+    if (!cls) return;
+    var name = cls.slice(3);
+    if (map[name]) el.innerHTML = '<svg viewBox="0 0 256 256" aria-hidden="true">' + map[name] + '</svg>';
+  });
+})();
+</script>
+</body>
+</html>
