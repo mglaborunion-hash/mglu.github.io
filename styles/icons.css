@@ -1,0 +1,16 @@
+/* =====================================================================
+   기호 1번 공약집 — 아이콘 (Phosphor fill SVG, 인라인 삽입)
+   <i class="ic ic-shield-check"></i> → JS가 inline <svg>를 주입
+   색은 currentColor(상위 color) 상속, 크기는 font-size(1em) 기준
+   ===================================================================== */
+.ic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  flex: none;
+  line-height: 0;
+  vertical-align: -0.135em;
+}
+.ic > svg { width: 1em; height: 1em; display: block; fill: currentColor; }
