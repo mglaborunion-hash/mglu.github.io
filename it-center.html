@@ -57,6 +57,18 @@
 .itback a { display: inline-flex; align-items: center; gap: .45rem; font-weight: 800; font-size: var(--t-sm); color: var(--blue-600); background: var(--white); border: 1.5px solid var(--blue-400); border-radius: var(--r-pill); padding: .7rem 1.4rem; text-decoration: none; }
 .itback a:hover { background: var(--blue-600); color: #fff; }
 .itback .ic { font-size: 1.1rem; }
+
+/* 세부 공약 카드 */
+.itcards { margin-top: 1.4rem; display: flex; flex-direction: column; gap: .75rem; }
+.itcard { background: var(--white); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--sh-card); overflow: hidden; }
+.itcard__head { display: flex; align-items: center; gap: .75rem; padding: .9rem 1.1rem .75rem; border-bottom: 1px solid var(--line-soft); }
+.itcard__no { display: grid; place-items: center; min-width: 2.4rem; height: 2.4rem; border-radius: 10px; background: var(--grad-navy); color: var(--gold-400); font-family: var(--font-head); font-weight: 900; font-size: 1rem; letter-spacing: -.01em; flex-shrink: 0; }
+.itcard__title { font-family: var(--font-head); font-weight: 900; font-size: clamp(.95rem,3.8vw,1.08rem); color: var(--navy-800); line-height: 1.35; letter-spacing: -.01em; }
+.itcard__title b { color: var(--blue-600); }
+.itcard__body { padding: .8rem 1.1rem .95rem; }
+.itcard__pts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .42rem; }
+.itcard__pts li { display: flex; align-items: flex-start; gap: .5rem; font-size: var(--t-sm); color: var(--ink-soft); line-height: 1.6; word-break: keep-all; }
+.itcard__pts li::before { content: '·'; color: var(--blue-500); font-weight: 900; font-size: 1.1em; line-height: 1.5; flex-shrink: 0; }
 </style>
 </head>
 <body>
@@ -91,13 +103,90 @@
       <figcaption class="itmeeting__cap">2026. 4. 8. IT센터 조합원 간담회 현장</figcaption>
     </figure>
 
-    <div class="itlist">
-      <p class="itlist__row"><span class="itlist__no">①</span>차세대 프로젝트, 사람이 먼저입니다</p>
-      <p class="itlist__row"><span class="itlist__no">②</span>더 나은 IT 근무환경</p>
-      <p class="itlist__row"><span class="itlist__no">③</span>AI와 함께 성장하는 IT센터</p>
-      <p class="itlist__row"><span class="itlist__no">④</span>유연하고 합리적인 근무제도</p>
-      <p class="itlist__row"><span class="itlist__no">⑤</span>야간근무 지원 강화</p>
-      <p class="itlist__row"><span class="itlist__no">⑥</span>언제 어디서나 소통하는 노동조합</p>
+    <div class="itcards">
+
+      <div class="itcard">
+        <div class="itcard__head">
+          <span class="itcard__no">01</span>
+          <span class="itcard__title">차세대 프로젝트,<br><b>사람이 먼저입니다</b></span>
+        </div>
+        <div class="itcard__body">
+          <ul class="itcard__pts">
+            <li>계정계 차세대 등 프로젝트 관련 현장의 목소리 반영</li>
+            <li>프로젝트 수당 신설 &nbsp;·&nbsp; 프로젝트 외 기타 업무 부담 완화</li>
+            <li>무리한 프로젝트 납입 및 책임전가로부터 조합원 보호</li>
+            <li>IT 전문인력 확충 요구 &nbsp;·&nbsp; 유관 현업부서 업무연속성 확보 및 유연한 인력 조정</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="itcard">
+        <div class="itcard__head">
+          <span class="itcard__no">02</span>
+          <span class="itcard__title">더 나은<br><b>IT 근무환경을 만들겠습니다</b></span>
+        </div>
+        <div class="itcard__body">
+          <ul class="itcard__pts">
+            <li>모션데스크 지급 확대 &nbsp;·&nbsp; 개인선호를 반영한 PC 및 주변기기(키보드, 마우스 등) 구매 지원</li>
+            <li>IT센터 구내식당 개선 &nbsp;·&nbsp; 내근직 복장 완전 자율화 (문서·규정으로 명시하여 시행)</li>
+            <li>IT센터 인근 카페 제휴</li>
+            <li>타사의 복지제도 벤치마킹 및 도입 추진</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="itcard">
+        <div class="itcard__head">
+          <span class="itcard__no">03</span>
+          <span class="itcard__title">AI와 함께<br><b>성장하는 IT센터</b></span>
+        </div>
+        <div class="itcard__body">
+          <ul class="itcard__pts">
+            <li>생성형 AI 개인계정 구독료 지원 &nbsp;·&nbsp; IT 맞춤형 교육 확대</li>
+            <li>최신 기술·트렌드 교육 기회 확대 &nbsp;·&nbsp; 일상 속 AI 활용 역량 강화 지원</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="itcard">
+        <div class="itcard__head">
+          <span class="itcard__no">04</span>
+          <span class="itcard__title">유연하고 합리적인<br><b>근무제도를 만들겠습니다</b></span>
+        </div>
+        <div class="itcard__body">
+          <ul class="itcard__pts">
+            <li>시차출퇴근제 50% 제한 개선 추진 &nbsp;·&nbsp; 선택근무제 개선 검토 및 병행 추진</li>
+            <li>업무 특성을 고려한 근무제도 운영 &nbsp;·&nbsp; 무임금 초과근로 방지 및 제도 개선</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="itcard">
+        <div class="itcard__head">
+          <span class="itcard__no">05</span>
+          <span class="itcard__title">야간근무에는<br><b>정당한 지원을 하겠습니다</b></span>
+        </div>
+        <div class="itcard__body">
+          <ul class="itcard__pts">
+            <li>야근 시 저녁 식대 지원 추진 &nbsp;·&nbsp; 야간 택시비 지원 추진</li>
+            <li>통근버스 도입 등 교통편의 개선 추진 &nbsp;·&nbsp; 프로젝트 등 야간근무 조합원 지원 강화</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="itcard">
+        <div class="itcard__head">
+          <span class="itcard__no">06</span>
+          <span class="itcard__title">언제 어디서든<br><b>소통하는 노동조합이 되겠습니다</b></span>
+        </div>
+        <div class="itcard__body">
+          <ul class="itcard__pts">
+            <li>중앙회 및 노동조합 관련 다양한 이슈 공유 &nbsp;·&nbsp; 비대면·익명·쌍방향 소통 경로 확대</li>
+            <li>조합원이 안심하고 제안할 수 있는 소통 창구 운영 &nbsp;·&nbsp; 정기적인 현장 간담회 지속 운영</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
 
     <div class="itfoot">

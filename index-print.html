@@ -135,7 +135,7 @@
 
     <div class="achv-more reveal">
       <button class="achv-toggle" id="achv-toggle" aria-expanded="false">
-        <i class="ic ic-caret-right"></i><span class="label">검증된 성과 31건 전체 보기</span>
+        <i class="ic ic-caret-right"></i><span class="label">검증된 성과 32건 전체 보기</span>
       </button>
       <div class="achv-list" id="achv-list" hidden></div>
     </div>
@@ -219,7 +219,7 @@ window.addEventListener('load', function () {
   // 모든 공약 아코디언 펼치기
   document.querySelectorAll('.pledge').forEach(function (p) { p.classList.add('open'); });
   document.querySelectorAll('.pledge__head').forEach(function (h) { h.setAttribute('aria-expanded', 'true'); });
-  // 성과 31건 전체 표시
+  // 성과 32건 전체 표시
   var list = document.getElementById('achv-list'); if (list) list.hidden = false;
   // reveal 전부 노출
   document.querySelectorAll('.reveal').forEach(function (e) { e.classList.add('in'); });

@@ -6,9 +6,9 @@
 /* ---- 숫자로 증명한 지난 3년 ---- */
 const STATS = [
   { icon:'users-three',   num:933, dec:0, unit:'명',     lab:'함께한 조합원' },
+  { icon:'flag-banner',   num:35,  dec:0, unit:'년만의', lab:'노동조합 재건' },
+  { icon:'network',       num:41,  dec:0, unit:'개',    lab:'금융노조 지부와 협력 및 산별교섭 기반 마련' },
   { icon:'handshake',     num:52,  dec:0, unit:'년만의',  lab:'중앙회 최초 단체협약' },
-  { icon:'chart-line-up', num:4.0, dec:1, unit:'%',      lab:"2년 연속 임금인상('25 3.9%)" },
-  { icon:'shield-check',  num:92,  dec:0, unit:'%',      lab:'전략적업적평가 개정 반대' },
 ];
 
 /* ---- 검증된 성과 하이라이트 (Before / After) ---- */
@@ -19,19 +19,20 @@ const HIGHLIGHTS = [
   { cat:'임금·수당',  icon:'coins',          title:'연차수당 가산율',         from:'약 1.16', to:'1.4' },
   { cat:'교육·학자금', icon:'graduation-cap', title:'취학전 자녀학자금(연)',   from:'156만원', to:'240만원' },
   { cat:'노후·퇴직',  icon:'medal',          title:'퇴직공제 월지원금',       from:'월 50만원', to:'월 60만원' },
+  { cat:'교육·연수',  icon:'airplane-tilt',  title:'해외연수제도 신설',        from:'없음',       to:'연간 10명' },
 ];
 
-/* ---- 전체 성과 목록 (31건) ---- */
+/* ---- 전체 성과 목록 (32건) ---- */
 const ACHIEVEMENTS = [
   { ic:'baby',           t:'자녀출산 경조비 인상',         d:'첫째 50→<span class="chg">500만원</span>, 둘째 100→800, 셋째이상 200→1,000만원' },
   { ic:'calendar-check', t:'육아휴직 기간 확대',           d:'1년 → <span class="chg">2년</span> (대상 만8세→만9세·초3 이하)' },
-  { ic:'hand-coins',     t:'육아휴직급여 신설',            d:'전기간 무급 → 최초 1년 <span class="chg">기본급 24%</span>' },
+  { ic:'hand-coins',     t:'육아휴직급여 신설',            d:'전기간 무급 → 자녀당 최초 1년 유급 및 초과기간 2달 <span class="chg">기본급 24%</span>' },
   { ic:'baby-carriage',  t:'출산전후 휴가급여 확대',       d:'초과기간 무급 → <span class="chg">기본급 24%</span>' },
   { ic:'heartbeat',      t:'난임휴직·급여 신설',           d:'없음 → 1년 이내 휴직, 최초 6개월 기본급 24%' },
   { ic:'hand-heart',     t:'가족돌봄휴직·급여 신설',       d:'없음 → 1년 이내 휴직, 최초 6개월 기본급 24%' },
   { ic:'coins',          t:'연차수당 가산율 증대',         d:'약 1.16 → <span class="chg">1.4</span>' },
-  { ic:'money',          t:'준정년퇴직자 특별퇴직금 신설', d:'임금 24개월분 + A(최대 6개월 범위)' },
-  { ic:'gavel',          t:'통상임금 대법원 판결 적용',    d:'재직자요건 수당 통상임금 산입' },
+  { ic:'money',          t:'준정년퇴직자 특별퇴직금 신설', d:'평균임금 24개월분 + A(최대 6개월 범위)' },
+  { ic:'gavel',          t:'통상임금 대법원 판결 적용',    d:'재직자요건 수당 통상임금 산입(시간외 지급율 2.09 유지)' },
   { ic:'credit-card',    t:'복지카드 기본포인트 인상',     d:'3,600P → <span class="chg">4,800P</span>, 근속 1년당 50P→100P' },
   { ic:'medal',          t:'퇴직공제급여 월지원금 상향',   d:'월 50 → <span class="chg">60만원</span>' },
   { ic:'graduation-cap', t:'취학전 자녀학자금 확대',       d:'연 156 → <span class="chg">240만원</span>' },
@@ -54,6 +55,7 @@ const ACHIEVEMENTS = [
   { ic:'book-open',      t:'학위과정(석사) 운영 실시',     d:'직무 역량 강화 과정 신설' },
   { ic:'shopping-cart',  t:'중앙본부 외 지역 소모품비 인상', d:'지역 근무환경 개선' },
   { ic:'users',          t:'사내동호회 활성화',            d:'기본지원금 + 실비지원금 지원' },
+  { ic:'airplane-tilt',  t:'해외연수제도 신설',            d:'매년 10명 규모의 <span class="chg">해외연수제도 신설</span>' },
 ];
 
 /* ---- 공약 인포그래픽 9장 ---- */
@@ -327,7 +329,7 @@ function initToggle() {
     const open = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!open));
     list.hidden = open;
-    btn.querySelector('.label').textContent = open ? '검증된 성과 31건 전체 보기' : '접기';
+    btn.querySelector('.label').textContent = open ? '검증된 성과 32건 전체 보기' : '접기';
   });
 }
 

@@ -69,6 +69,8 @@
 .dacts { display: grid; gap: .8rem; margin-top: 1.3rem; }
 .dact { background: var(--white); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--sh-card); }
 .dact img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; background: var(--blue-50); }
+.dact--duo .dact__imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.dact--duo .dact__imgs img { aspect-ratio: 4/3; }
 .dact__b { padding: .9rem 1rem 1rem; }
 .dact__t { font-weight: 800; font-size: var(--t-body); color: var(--ink); margin-bottom: .25rem; }
 .dact__c { font-size: var(--t-xs); color: var(--ink-soft); line-height: 1.55; word-break: keep-all; }
