@@ -412,9 +412,9 @@ img, svg, video { max-width: 100%; }
 .story__hero-date { display: inline-block; font-weight: 800; color: var(--blue-600); margin-right: .4rem; }
 .letter__img { margin-top: 1rem; }
 .letter__img img { width: 100%; border-radius: var(--r-md); display: block; object-fit: cover; }
-.record__photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; margin-top: 1.3rem; }
+.record__photos { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; margin-top: 1.3rem; }
 .record__photos img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--r-md); display: block; }
-@media (max-width: 480px) { .record__photos { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .record__photos { grid-template-columns: repeat(2, 1fr); } }
 .story__hero-extra { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-top: .6rem; }
 .story__hero-extra img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--r-md); }
 .timeline { display: grid; gap: 0; margin-top: .4rem; }

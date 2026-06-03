@@ -26,8 +26,8 @@ const HIGHLIGHTS = [
 const ACHIEVEMENTS = [
   { ic:'baby',           t:'자녀출산 경조비 인상',         d:'첫째 50→<span class="chg">500만원</span>, 둘째 100→800, 셋째이상 200→1,000만원' },
   { ic:'calendar-check', t:'육아휴직 기간 확대',           d:'1년 → <span class="chg">2년</span> (대상 만8세→만9세·초3 이하)' },
-  { ic:'hand-coins',     t:'육아휴직급여 신설',            d:'전기간 무급 → 자녀당 최초 1년 유급 및 초과기간 2달 <span class="chg">기본급 24%</span>' },
-  { ic:'baby-carriage',  t:'출산전후 휴가급여 확대',       d:'초과기간 무급 → <span class="chg">기본급 24%</span>' },
+  { ic:'hand-coins',     t:'육아휴직급여 신설',            d:'전기간 무급 → 자녀당 최초 1년 유급 <span class="chg">기본급 24%</span>' },
+  { ic:'baby-carriage',  t:'출산전후 휴가급여 확대',       d:'초과기간 무급 → 초과기간 2달 <span class="chg">기본급 24%</span>' },
   { ic:'heartbeat',      t:'난임휴직·급여 신설',           d:'없음 → 1년 이내 휴직, 최초 6개월 기본급 24%' },
   { ic:'hand-heart',     t:'가족돌봄휴직·급여 신설',       d:'없음 → 1년 이내 휴직, 최초 6개월 기본급 24%' },
   { ic:'coins',          t:'연차수당 가산율 증대',         d:'약 1.16 → <span class="chg">1.4</span>' },
