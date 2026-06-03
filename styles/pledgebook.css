@@ -336,6 +336,13 @@ img, svg, video { max-width: 100%; }
   @keyframes heroUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 }
 
+/* Page entrance animation */
+@keyframes pageIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.app { animation: pageIn .28s ease both; }
+
+/* bnav as <a> links */
+.bnav__btn { text-decoration: none; -webkit-tap-highlight-color: transparent; }
+
 /* Desktop niceties */
 @media (min-width: 640px) {
   body { padding: 0; }

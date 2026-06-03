@@ -408,30 +408,30 @@ function initLightbox() {
 }
 
 /* ===================================================================== */
-/* Bottom nav: active tab + smooth scroll                                */
+/* Bottom nav: page-based navigation                                     */
 /* ===================================================================== */
+const PAGE_MAP = {
+  home:       'index.html',
+  start:      'page-start.html',
+  record:     'page-record.html',
+  succession: 'page-succession.html',
+  pledges:    'page-pledges.html',
+};
+
 function initNav() {
-  const btns = [...document.querySelectorAll('.bnav__btn')];
-  const map = {};
-  btns.forEach(b => { const id = b.dataset.sec; const sec = document.getElementById(id); if (sec) map[id] = sec; });
-  function goto(id) {
-    const sec = document.getElementById(id);
-    if (sec) window.scrollTo({ top: Math.max(0, sec.offsetTop - 8), behavior: 'smooth' });
-  }
-  btns.forEach(b => b.addEventListener('click', () => goto(b.dataset.sec)));
-  // home hub navigation cards / any [data-goto]
-  document.querySelectorAll('[data-goto]').forEach(el => el.addEventListener('click', () => goto(el.dataset.goto)));
-  const ids = Object.keys(map);
-  if (!ids.length || !('IntersectionObserver' in window)) return;
-  const io = new IntersectionObserver((ents) => {
-    ents.forEach(e => {
-      if (e.isIntersecting) {
-        const id = e.target.id;
-        btns.forEach(b => b.classList.toggle('active', b.dataset.sec === id));
-      }
+  // Set active tab based on current filename
+  const file = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.bnav__btn').forEach(btn => {
+    const href = btn.getAttribute('href') || '';
+    btn.classList.toggle('active', href === file || (!file && href === 'index.html'));
+  });
+  // navcard / data-goto → navigate to page
+  document.querySelectorAll('[data-goto]').forEach(el => {
+    el.addEventListener('click', () => {
+      const p = PAGE_MAP[el.dataset.goto];
+      if (p) location.href = p;
     });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  ids.forEach(id => io.observe(map[id]));
+  });
 }
 
 /* ===================================================================== */
