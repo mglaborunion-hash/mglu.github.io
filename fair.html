@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- cache-guard: 새 배포 자동 감지 후 새로고침 (version.json 기준) -->
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<script>(function(){var V="20260604-2";try{fetch("version.json?_="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.v&&d.v!==V&&!sessionStorage.getItem("cg_"+d.v)){sessionStorage.setItem("cg_"+d.v,"1");var p=location.pathname;location.replace(p+"?_v="+encodeURIComponent(d.v))}}).catch(function(){})}catch(e){}})();</script>
 <title>공정한 인사와 건강한 조직문화 · 기호 1번 공약집</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/tokens.css?v=20260604">
-<link rel="stylesheet" href="styles/pledgebook.css?v=20260604">
-<link rel="stylesheet" href="styles/icons.css?v=20260604">
-<link rel="stylesheet" href="styles/detail.css?v=20260604">
+<link rel="stylesheet" href="styles/tokens.css?v=20260604-2">
+<link rel="stylesheet" href="styles/pledgebook.css?v=20260604-2">
+<link rel="stylesheet" href="styles/icons.css?v=20260604-2">
+<link rel="stylesheet" href="styles/detail.css?v=20260604-2">
 </head>
 <body>
 
@@ -117,7 +120,7 @@
 
 </main>
 
-<script src="data/icons.js?v=20260604"></script>
+<script src="data/icons.js?v=20260604-2"></script>
 <script>
 (function(){var m=window.ICONS||{};document.querySelectorAll('i.ic').forEach(function(el){var c=[].slice.call(el.classList).find(function(x){return x.indexOf('ic-')===0;});if(c&&m[c.slice(3)])el.innerHTML='<svg viewBox="0 0 256 256" aria-hidden="true">'+m[c.slice(3)]+'</svg>';});})();
 </script>

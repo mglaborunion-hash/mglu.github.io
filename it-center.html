@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- cache-guard: 새 배포 자동 감지 후 새로고침 (version.json 기준) -->
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<script>(function(){var V="20260604-2";try{fetch("version.json?_="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.v&&d.v!==V&&!sessionStorage.getItem("cg_"+d.v)){sessionStorage.setItem("cg_"+d.v,"1");var p=location.pathname;location.replace(p+"?_v="+encodeURIComponent(d.v))}}).catch(function(){})}catch(e){}})();</script>
 <title>IT센터 조합원과의 약속 · 기호 1번 공약집</title>
 <meta name="description" content="2026년 4월 8일 IT센터 현장 방문 — 우리가 약속하는 6가지 변화. 기호 1번 김삼중·강민규·오동희.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/tokens.css?v=20260604">
-<link rel="stylesheet" href="styles/pledgebook.css?v=20260604">
-<link rel="stylesheet" href="styles/icons.css?v=20260604">
+<link rel="stylesheet" href="styles/tokens.css?v=20260604-2">
+<link rel="stylesheet" href="styles/pledgebook.css?v=20260604-2">
+<link rel="stylesheet" href="styles/icons.css?v=20260604-2">
 <style>
 /* ---- IT 세부 페이지 전용 ---- */
 .itpage { width: 100%; max-width: var(--col, 600px); margin-inline: auto; background: var(--paper); min-height: 100vh; box-shadow: 0 0 60px rgba(8,24,74,.12); overflow: clip; padding-bottom: 3rem; }
@@ -201,7 +204,7 @@
 
 </main>
 
-<script src="data/icons.js?v=20260604"></script>
+<script src="data/icons.js?v=20260604-2"></script>
 <script>
 (function () {
   var map = window.ICONS || {};
